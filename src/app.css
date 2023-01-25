@@ -148,6 +148,10 @@ form {
   border-color: var(--alert-text);
 }
 
+.warning input::placeholder {
+  color: var(--alert-text);
+}
+
 .field-error {
   color: var(--alert-text);
   font-size: 10px;
@@ -201,21 +205,14 @@ form button:hover {
   font-weight: 600;
 }
 
-form,
-.subscription-card,
 .success .successful-component {
-  transform: translateY(0px);
-  opacity: 1;
-  height: fit-content;
-  transition: transform 300ms ease-in-out;
+  display: block;
 }
 
 .success form,
 .success .subscription-card,
 .successful-component {
-  transform: translateY(-9999px);
-  opacity: 0;
-  height: 0;
+  display: none;
 }
 
 .successful-component {
@@ -241,6 +238,7 @@ footer.attribution {
   font-size: 11px;
   text-align: center;
   color: hsl(0, 0%, 8%);
+  margin-top: 2rem;
 }
 
 .attribution a {
@@ -331,6 +329,10 @@ footer.attribution {
 
   section.introduction-component p {
     padding: 0;
+  }
+
+  .subscription-card p{
+    width: 100%;
   }
 
   form {
