@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --alert-text: #ff7a7a;
+  --success-btn: hsl(154, 59%, 51%);
+  --success-btn-shadow: hsla(154, 59%, 51%, 0.5);
+  --subscription-card: hsl(248, 32%, 49%);
+  --input-text: hsl(249, 10%, 26%);
+  --input-text-focus: hsla(249, 10%, 26%, 0.8);
+  --terms-text: hsl(246, 25%, 77%);
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: url("../images/bg-intro-mobile.png") var(--alert-text) no-repeat;
+  background-position: center top;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: white;
+}
+
+.container-wrapper {
+  width: 100%;
+  padding: 1rem;
+  margin-inline: auto;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > * {
+  max-width: 100%;
+  flex: 1 1 auto;
+}
+
+section.introduction-component {
+  text-align: center;
+  color: white;
+  margin-block: 3.125rem;
+}
+
+section.introduction-component h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin-block: 1.5rem;
+}
+
+section.introduction-component p {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-inline: 0.625rem;
+}
+
+.subscription-card {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--subscription-card);
+  box-shadow: 0px 8px 2px rgba(0, 0, 0, 0.2);
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+}
+
+.subscription-card p {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  width: 60%;
+}
+
+.subscription-card strong {
+  font-weight: 600;
+}
+
+.subscription-component {
+  padding-inline: 0.5rem;
+}
+
+form {
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 0px 8px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+
+.form-group:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.form-group input {
+  display: block;
+  width: 100%;
+  border: 1px solid hsl(0, 0%, 87%);
+  outline: none;
+  border-radius: 0.3125rem;
+  padding: 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--input-text);
+}
+
+.form-group input::placeholder {
+  opacity: 0.8;
+}
+
+.form-group input:focus {
+  border-color: var(--input-text-focus);
+}
+
+.warning input {
+  background: url("../images/icon-error.svg") no-repeat;
+  background-position: 96% center;
+  border-color: var(--alert-text);
+  color: var(--alert-text);
+}
+
+.warning input:focus {
+  border-color: var(--alert-text);
+}
+
+.field-error {
+  color: var(--alert-text);
+  font-size: 10px;
+  font-weight: 500;
+  display: block;
+  text-align: end;
+  height: 0;
+  opacity: 0;
+}
+
+.warning .field-error {
+  height: fit-content;
+  opacity: 1;
+  transition: all 200ms ease-in;
+}
+
+form button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--success-btn);
+  box-shadow: 0px 4px 2px var(--success-btn-shadow);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 200ms ease-out;
+  margin-bottom: 1.25rem;
+}
+
+form button:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.terms {
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: hsl(248, 24%, 40%);
+  text-align: center;
+}
+
+.terms a {
+  text-decoration: none;
+  color: hsl(0, 100%, 35%);
+  font-weight: 600;
+}
+
+form,
+.subscription-card,
+.success .successful-component {
+  transform: translateY(0px);
+  opacity: 1;
+  height: fit-content;
+  transition: transform 300ms ease-in-out;
+}
+
+.success form,
+.success .subscription-card,
+.successful-component {
+  transform: translateY(-9999px);
+  opacity: 0;
+  height: 0;
+}
+
+.successful-component {
+  background-color: var(--success-btn);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 0.625rem;
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+
+  cursor: default;
+}
+
+.successful-component p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.success .successful-component {
+  display: block;
+}
+
+footer.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: hsl(0, 0%, 8%);
+}
+
+.attribution a {
+  color: hsl(234, 48%, 12%);
+}
+
+@media screen and (max-width: 300px) {
+  .container-wrapper {
+    padding: 0.25rem;
+  }
+  section.introduction-component h1 {
+    font-size: 1.125rem;
+  }
+
+  section.introduction-component p {
+    font-size: 0.625rem;
+  }
+
+  .subscription-card p,
+  footer.attribution {
+    font-size: 0.5rem;
+  }
+
+  form {
+    padding: 0.75rem;
+  }
+
+  .form-group:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+  .form-group input {
+    font-size: 0.625rem;
+    padding: 0.5rem;
+  }
+
+  form button {
+    font-size: 0.625rem;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .terms {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container-wrapper {
+    max-width: 540px;
+  }
+
+  .terms {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background: url("../images/bg-intro-desktop.png") var(--alert-text)
+      no-repeat;
+    background-size: cover;
+  }
+
+  .container-wrapper {
+    max-width: 720px;
+  }
+
+  form button {
+    font-size: 0.9375rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container-wrapper {
+    max-width: 960px;
+  }
+
+  .container > * {
+    max-width: 50%;
+    padding-inline: 0.5rem;
+  }
+
+  section.introduction-component {
+    margin: 0;
+    text-align: start;
+  }
+
+  section.introduction-component p {
+    padding: 0;
+  }
+
+  form {
+    padding: 2rem;
+  }
+
+  .terms {
+    font-size: 0.875rem;
+  }
+
+  footer.attribution {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-wrapper {
+    max-width: 1140px;
+  }
+
+  .container > * {
+    max-width: 48%;
+  }
+
+  .container {
+    gap: 2%;
+  }
+
+  section.introduction-component h1 {
+    font-size: 2.375rem;
+    width: 65%;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group input {
+    padding: 0.875rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container-wrapper {
+    max-width: 1320px;
+  }
+
+  .container {
+    gap: 6%;
+  }
+}
