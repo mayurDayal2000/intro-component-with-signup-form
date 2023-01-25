@@ -55,6 +55,8 @@ section.introduction-component {
 
 section.introduction-component h1 {
   font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   line-height: 1.2;
   margin-block: 1.5rem;
 }
@@ -331,7 +333,7 @@ footer.attribution {
     padding: 0;
   }
 
-  .subscription-card p{
+  .subscription-card p {
     width: 100%;
   }
 
@@ -383,5 +385,14 @@ footer.attribution {
 
   .container {
     gap: 6%;
+  }
+
+  .container > * {
+    max-width: 42%;
+  }
+
+  section.introduction-component h1 {
+    font-size: 3rem;
+    width: 85%;
   }
 }
